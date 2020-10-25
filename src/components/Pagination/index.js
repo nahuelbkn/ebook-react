@@ -8,7 +8,9 @@ export default class Pagination extends React.Component
 
         return (
             <nav aria-label="Page navigation example">
-                <ul className="pagination justify-content-end">
+                <div className="page-link">
+                    <button disabled className="page-link">Página: {currentPage} / {totalPages}</button>
+                    <ul className="pagination justify-content-end">
                     {/* {
                         currentPage == 0 && (
                             <li className="page-item disabled">
@@ -26,21 +28,20 @@ export default class Pagination extends React.Component
                     {/* {
                         currentPage == totalPages && (
                             <li className="page-item disabled">
-                                <button onClick={handleNextPage}className="page-link">Next Page</button>
+                                <button onClick={handleNextPage} className="page-link">Next Page</button>
                             </li>
                         )
                     } */}
                     {
                         currentPage != totalPages && (
                             <li className="page-item">
-                                <button onClick={handleNextPage}className="page-link">Next Page</button>
+                                <button onClick={handleNextPage} className="page-link">Next Page</button>
                             </li>
                         )
                     
                     }
-                        
-                </ul>
-                <div>{currentPage}/{totalPages}</div>
+                    </ul>
+                </div>   
             </nav>
         )
     }

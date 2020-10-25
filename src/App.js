@@ -4,6 +4,7 @@ import book from "./book.json";
 import "./App.css";
 import Jumbotron from "./components/Jumbotron";
 import Pagination from "./components/Pagination";
+import BuildCurrentPage from "./components/BuildCurrentPage";
 
 const PAGE_SIZE = 100;
 
@@ -50,10 +51,12 @@ export default class App extends React.Component {
         return(
             <div className="app">
                 <Jumbotron title={title} author={author}></Jumbotron>
-                <Pagination currentPage={currentPage} totalPages={totalPages} handlePrevPage={this.handlePrevPage} handleNextPage={this.handleNextPage}></Pagination>
 
                 {currentPage === 0 && <Page type="cover" imgUrl={cover}/>}
                 {currentPage !== 0 && <Page type="page" content={pageContent.join(" ")} />}
+
+                <br/>
+                <Pagination currentPage={currentPage} totalPages={totalPages} handlePrevPage={this.handlePrevPage} handleNextPage={this.handleNextPage}></Pagination>
             </div>
         );
     }

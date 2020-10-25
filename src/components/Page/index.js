@@ -8,9 +8,8 @@ export default class Page extends React.Component
         const {type, imgUrl, content} = this.props;
         return (
             <>
-                { type == "cover" ? <div><a href={imgUrl} target="_blank"><img src={imgUrl} alt="Portada"/></a></div> : <div>{content}</div>}
+                { type == "cover" ? <div className="cover"><a href={imgUrl} target="_blank"><img src={imgUrl} alt="Portada"/></a></div> : <div className="content">{content}</div>}
             </>
-
         )
     }
 }
